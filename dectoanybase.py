@@ -1,13 +1,15 @@
 from stack import Stack
 
+base = int(input("Enter the base in which you want the decimal number to convert"))
+number = int(input("Enter the decimal number"))
 
 def convert(num):
 	list = Stack()
 	num = int(num)
 	while (num > 0):
-		list.push(num%2)
+		list.push(num%base)
 		# print list
-		num = num // 2
+		num = num // base
 
 	binary = ''
 	while not list.isEmpty():
@@ -17,4 +19,4 @@ def convert(num):
 		
 
 
-print convert(255) 
+print convert(number) 
