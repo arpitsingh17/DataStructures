@@ -19,11 +19,4 @@ class Stack:
 
 
 
-s1 = Stack()
-s1.push(1)
-s1.push(2)
-print s1
-print s1.size()
-print s1.pop()
-print s1.isEmpty()
-print s1.peek()
+
