@@ -1,9 +1,3 @@
-'''The main advantage of using a linked list over a 
-similar data structure, like the static array, 
-is the linked list’s dynamic memory allocation:
-if you don’t know the amount of data you want to store before hand, the linked list can adjust on the fly.* Of course this advantage comes at a price: dynamic memory allocation 
-requires more space and commands slower look up times.'''
-
 class Node():
     def __init__(self,data=None,next_node=None):
         self.data = data
@@ -47,6 +41,27 @@ class LinkedList(object):
         if current is None:
             raise ValueError("Data not in list")
         return current
+
+    def delete(self,data):
+        current = self.head
+        previous = None
+        found = False
+
+        while current and found is False:
+            if current.get_data() == data:
+                found = True
+            else:
+                previous = current
+                current = current.get_next()
+
+        if current is None:
+            raise ValueError("Data not in list")
+
+        if previous is None:
+            self.head = current.get_next()
+        else:
+            previous.set_next(current.get_next())
+
 
 
 
