@@ -22,3 +22,20 @@ class Solution(object):
                 varnode = varnode.next
         
         return dummy.next
+    
+ # Using Recurssion
+class Solution(object):
+    def removeElements(self, head, val):
+        """
+        :type head: ListNode
+        :type val: int
+        :rtype: ListNode
+        """
+        
+        if not head:
+            return head
+        head.next = self.removeElements(head.next, val)
+        if head.val == val:
+            return head.next 
+        else:
+            return head
