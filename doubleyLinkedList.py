@@ -80,4 +80,7 @@ newlist.find(2)
 newlist.add(10)
 newlist.add(11)
 
-print(newlist)
+print(newlist.size)
+print(newlist.find(2))
+newlist.remove(2)
+print(newlist.size)
